@@ -1,0 +1,11 @@
+Explicação básica do default methods
+
+
+
+1- Cria a interface com o método desejado
+2- Define o corpo do método por exemplo o cálculo de juros de alguma fatura. (Demonstração na Interface)
+3- Implementa esse método nas outras classes, assim não precisa inserir na classe
+4- Pode instanciar normalmente os métodos no programa principal!
+
+OBS: O método get precisa do valor do serviço para funcionar, por isso deve ser
+implementado e escrito na classe, pois não possui um método padrão.
