@@ -1,9 +1,12 @@
 package com.spring.workshopmongo.domain;
 
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Document(collection = "user")
@@ -15,6 +18,10 @@ public class User implements Serializable {
     private String name;
     private String email;
 
+    //Referência a outra classe que tem vários posts
+    @DBRef(lazy = true) //O lazy garante que o post só vai ser carregado depois que solicitado
+    private List<Post> posts = new ArrayList<>();
+
     public User() {
     }
 
@@ -23,6 +30,7 @@ public class User implements Serializable {
         this.name = name;
         this.email = email;
     }
+
 
     public String getId() {
         return id;
@@ -46,6 +54,10 @@ public class User implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Post> getPosts() {
+        return posts;
     }
 
     @Override
