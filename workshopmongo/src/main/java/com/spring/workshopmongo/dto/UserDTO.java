@@ -1,4 +1,4 @@
-package dto;
+package com.spring.workshopmongo.dto;
 
 import com.spring.workshopmongo.domain.User;
 
